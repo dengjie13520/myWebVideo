@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <% for(var x of myFile){ %>
+      <p><%= x %><button onclick="palyVideo(this)" id="<%= x %>" type="button">play</button></p>
+    <% } %>
+	<video controls style="width:100%" src="123.mp4" id="mySource">
+      Your browser does not support the video tag.
+  </video>
+  </body>
+  <script>
+    function palyVideo(myObject){
+      document.getElementById("mySource").src = myObject.id
+      myObject.after(document.getElementById("mySource"))
+    }
+  </script>
+</html>
